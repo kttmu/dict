@@ -1,0 +1,41 @@
+#!/bin/bash
+#for external dictionary
+dictpath=${HOME}/dict/gene-utf8.txt
+acupath=${HOME}/dict/
+
+echo -e "\033[33minput the word or \"over\" when you finish this:\033[m"
+read word
+while [ ${word} != "over"  ]
+do
+  echo -e "\033[36m${word}\033[m"
+  grep -n "${word}" ${dictpath} -A 1 -wi --color
+  #result=`grep -n "${word}" ${dictpath} -A 1 -wi --color`
+  result=`grep "${word}" ${dictpath} -A 1 -wi --color`
+
+  if [ -z ${result} 2>/dev/null ]; then
+    echo -e "\033[31msorry, cannot find the word.\nWould you like add the word to dict?[y/n]\033[m"
+    read flag
+
+    if [ ${flag} = "y" ]; then
+      echo -e "\033[33menter the meaning:\033[m"
+      read mean
+      #write
+      echo ${word} >> ${dictpath}
+      echo ${mean} >> ${dictpath}
+    fi
+
+  fi
+
+  #record the word
+  echo `date` $word >> $acupath/accumulate.csv
+  echo -e "\033[33minput the word or \"over\" when you finish this:\033[m"
+  read word
+  clear
+  
+done
+echo "Well Done ME !"
+
+unset dictpath
+unset acupath
+unset mean
+unset word
