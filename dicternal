@@ -8,7 +8,7 @@ read word
 while [ ${word} != "over"  ]
 do
   echo -e "\033[36m${word}\033[m"
-  grep -n "${word}" ${dictpath} -A 1 -wi --color
+  grep "${word}" ${dictpath} -A 1 -wi --color
   #result=`grep -n "${word}" ${dictpath} -A 1 -wi --color`
   result=`grep "${word}" ${dictpath} -A 1 -wi --color`
 
