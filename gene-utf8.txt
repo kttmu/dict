@@ -114776,3 +114776,15 @@ tracklet
 動体の跡について残さな軌跡
 unary
 単項
+vertice
+頂点
+whack
+棒などで強く打つ
+infeasible
+不可能
+recursive
+再帰的
+amodal
+非形式的な
+saliency
+突極性
