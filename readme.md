@@ -1,6 +1,6 @@
-# dictternal for me
+# dictternal
 ---
 simple in best
-***
-マークダウンが楽しいお年頃
+**
+dict
 ***
