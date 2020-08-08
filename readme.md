@@ -1,3 +1,3 @@
-# dictternal
+# dicternal
 
 simple in best
